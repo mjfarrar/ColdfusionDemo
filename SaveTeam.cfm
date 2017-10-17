@@ -1,5 +1,5 @@
 <cfset oLoadTeam = new cfc.Team()/>
 
-<cfset teamID = oLoadTeam.save(val(form.teamID), val(form.sportID), form.teamName, form.teamCity, form.teamState)/>
+<cfset teamID = oLoadTeam.save(val(form.teamID), form.teamName, form.teamCity, form.teamState, val(form.sportID))/>
 
-<cflocation url="TeamPage.cfm?id=#teamID#">
+<cflocation url="TeamsPage.cfm?id=#teamID#">
