@@ -4,4 +4,6 @@ component persistent="true" {
     property name="city" column="City" ormtype="text";
     property name="state" column="State" ormtype="text";
     property name="sportid" column="SportID" ormtype="number";
+    
+    property name="players" fieldtype="one-to-many" cfc="Players" fkcolumn="team"; 
 }

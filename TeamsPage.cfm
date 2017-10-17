@@ -15,6 +15,7 @@
             <th>Team State</th>
             <th>Team Sport</th>
             <th>Edit Team</th>
+            <th>Manage Team</th>
         </tr>
     </thead>
 
@@ -28,6 +29,7 @@
                     <td>#idx.state#</td>
                     <td>#sport.name#</td>
                     <td><a href="?id=#idx.id#">Edit</a></td>
+                    <td><a href="ManageTeam.cfm?id=#idx.id#">Manage</a><td>
                 </tr>
             </cfloop>
         </cfoutput>
@@ -50,7 +52,7 @@
                 Team Sport: 
                 <select name="sportID">
                     <cfloop array="#sportList#" index="idx">
-                        <option value="#idx.id#" selected="#isDefined("teamSport") && idx.id == teamSport.id#">#idx.name#</option>
+                        <option value="#idx.id#" #isDefined("teamSport") && idx.id == teamSport.id ? 'selected="selected"':''#>#idx.name#</option>
                     </cfloop>
                 </select>
             </div>
